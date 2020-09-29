@@ -1,0 +1,59 @@
+{
+  "_args": [
+    [
+      "cordova.plugins.uxpdfviewer@1.0.0",
+      "/Users/developer/Projects/aluminium/ts-aluminium"
+    ]
+  ],
+  "_from": "cordova.plugins.uxpdfviewer@1.0.0",
+  "_id": "cordova.plugins.uxpdfviewer@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-gRYdXnFpUtprpSlcTF1cMZ7W9Gg=",
+  "_location": "/cordova.plugins.uxpdfviewer",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "registry": true,
+    "raw": "https://github.com/victoriiapetrenko/ux_pdf_viewer.git",
+    "rawSpec": "https://github.com/victoriiapetrenko/ux_pdf_viewer.git",
+    "saveSpec": "git+https://github.com/victoriiapetrenko/ux_pdf_viewer.git",
+    "fetchSpec": "https://github.com/victoriiapetrenko/ux_pdf_viewer.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/victoriiapetrenko/ux_pdf_viewer.git#bc283fe695beb20a8ea01c6861f2031d1d6f5ece",
+  "_spec": "https://github.com/victoriiapetrenko/ux_pdf_viewer.git",
+  "_where": "/Users/developer/Projects/aluminium/ts-aluminium",
+  "author": {
+    "name": "Victoria Petrenko"
+  },
+  "bugs": {
+    "url": "https://github.com/victoriiapetrenko/ux_pdf_viewer/issues"
+  },
+  "cordova": {
+    "id": "cordova.plugins.uxpdfviewer",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "description": "[Outdated] ux_pdf_viewer plugin.",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.6.0"
+    }
+  ],
+  "homepage": "https://github.com/victoriiapetrenko/ux_pdf_viewer#readme",
+  "keywords": [],
+  "license": "MIT",
+  "name": "cordova.plugins.uxpdfviewer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victoriiapetrenko/ux_pdf_viewer.git.git"
+  },
+  "version": "1.0.0"
+}

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova.plugins.uxpdfviewer"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        version="0.9.13">
+    <engines>
+        <engine name="cordova" version=">=3.7.0"/>
+        <engine name="cordova-windows" version=">=4.4.0"/>
+    </engines>
+    <name>UXPDFViewerPlugin</name>
+    <description>UXPDFViewer cordova plugin for iOS 8.1 + 10</description>
+    <author>Victoria Petrenko</author>
+    <email></email>
+    <license>MIT</license>
+
+    <js-module src="www/UXPDFViewerPlugin.js"
+               name="UXPDFViewerPlugin">
+        <clobbers target="cordova.plugins.UXPDFViewerPlugin"/>
+        <clobbers target="UXPDFViewerPlugin"/>
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="UXPDFViewerPlugin">
+                <param name="ios-package" value="UXPDFViewerPlugin"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/UXPDFViewerPlugin.h"/>
+        <source-file src="src/ios/UXPDFViewerPlugin.m"/>
+        
+        <header-file src="src/ios/BlankView.h"/>
+        <source-file src="src/ios/BlankView.mm"/>
+        
+        <header-file src="src/ios/BlankViewController.h"/>
+        <source-file src="src/ios/BlankViewController.mm"/>
+        
+        <header-file src="src/ios/UXReaderAction.h"/>
+        <source-file src="src/ios/UXReaderAction.mm"/>
+        
+        <header-file src="src/ios/UXReaderCanceller.h"/>
+        <source-file src="src/ios/UXReaderCanceller.mm"/>
+        
+        <header-file src="src/ios/UXReaderDestination.h"/>
+        <source-file src="src/ios/UXReaderDestination.mm"/>
+        
+        <header-file src="src/ios/UXReaderDocument.h"/>
+        <source-file src="src/ios/UXReaderDocument.mm"/>
+        
+        <header-file src="src/ios/UXReaderDocumentPage.h"/>
+        <source-file src="src/ios/UXReaderDocumentPage.mm"/>
+        
+        <header-file src="src/ios/UXReaderFramework.h"/>
+        <source-file src="src/ios/UXReaderFramework.mm"/>
+        
+        <header-file src="src/ios/UXReaderMainScrollView.h"/>
+        <source-file src="src/ios/UXReaderMainScrollView.mm"/>
+        
+        <header-file src="src/ios/UXReaderMainToolbar.h"/>
+        <source-file src="src/ios/UXReaderMainToolbar.mm"/>
+        
+        <header-file src="src/ios/UXReaderOptionsView.h"/>
+        <source-file src="src/ios/UXReaderOptionsView.mm"/>
+        
+        <header-file src="src/ios/UXReaderOutline.h"/>
+        <source-file src="src/ios/UXReaderOutline.mm"/>
+        
+        <header-file src="src/ios/UXReaderOutlineView.h"/>
+        <source-file src="src/ios/UXReaderOutlineView.mm"/>
+        
+        <header-file src="src/ios/UXReaderPageControl.h"/>
+        <source-file src="src/ios/UXReaderPageControl.mm"/>
+        
+        <header-file src="src/ios/UXReaderPageImageView.h"/>
+        <source-file src="src/ios/UXReaderPageImageView.mm"/>
+        
+        <header-file src="src/ios/UXReaderPageNumbers.h"/>
+        <source-file src="src/ios/UXReaderPageNumbers.mm"/>
+        
+        <header-file src="src/ios/UXReaderPageScrollView.h"/>
+        <source-file src="src/ios/UXReaderPageScrollView.mm"/>
+        
+        <header-file src="src/ios/UXReaderPageThumbView.h"/>
+        <source-file src="src/ios/UXReaderPageThumbView.mm"/>
+        
+        <header-file src="src/ios/UXReaderPageTiledView.h"/>
+        <source-file src="src/ios/UXReaderPageTiledView.mm"/>
+        
+        <header-file src="src/ios/UXReaderPageToolbar.h"/>
+        <source-file src="src/ios/UXReaderPageToolbar.mm"/>
+        
+        <header-file src="src/ios/UXReaderSearchControl.h"/>
+        <source-file src="src/ios/UXReaderSearchControl.mm"/>
+        
+        <header-file src="src/ios/UXReaderSearchView.h"/>
+        <source-file src="src/ios/UXReaderSearchView.mm"/>
+        
+        <header-file src="src/ios/UXReaderSelection.h"/>
+        <source-file src="src/ios/UXReaderSelection.mm"/>
+        
+        <header-file src="src/ios/UXReaderShadowView.h"/>
+        <source-file src="src/ios/UXReaderShadowView.mm"/>
+        
+        <header-file src="src/ios/UXReaderStuffController.h"/>
+        <source-file src="src/ios/UXReaderStuffController.mm"/>
+        
+        <header-file src="src/ios/UXReaderStuffToolbar.h"/>
+        <source-file src="src/ios/UXReaderStuffToolbar.mm"/>
+        
+        <header-file src="src/ios/UXReaderThumbCache.h"/>
+        <source-file src="src/ios/UXReaderThumbCache.mm"/>
+        
+        <header-file src="src/ios/UXReaderThumbCell.h"/>
+        <source-file src="src/ios/UXReaderThumbCell.mm"/>
+        
+        <header-file src="src/ios/UXReaderThumbShow.h"/>
+        <source-file src="src/ios/UXReaderThumbShow.mm"/>
+        
+        <header-file src="src/ios/UXReaderThumbsView.h"/>
+        <source-file src="src/ios/UXReaderThumbsView.mm"/>
+        
+        <header-file src="src/ios/UXReaderTiledLayer.h"/>
+        <source-file src="src/ios/UXReaderTiledLayer.mm"/>
+        
+        <header-file src="src/ios/UXReaderViewController.h"/>
+        <source-file src="src/ios/UXReaderViewController.mm"/>
+        
+        <header-file src="src/ios/UXReaderWatermark.h"/>
+        <source-file src="src/ios/UXReaderWatermark.mm"/>
+        
+        <header-file src="src/ios/PDFium/fpdf_dataavail.h"/>
+        <header-file src="src/ios/PDFium/fpdf_doc.h"/>
+        <header-file src="src/ios/PDFium/fpdf_edit.h"/>
+        <header-file src="src/ios/PDFium/fpdf_ext.h"/>
+        <header-file src="src/ios/PDFium/fpdf_flatten.h"/>
+        <header-file src="src/ios/PDFium/fpdf_formfill.h"/>
+        <header-file src="src/ios/PDFium/fpdf_fwlevent.h"/>
+        <header-file src="src/ios/PDFium/fpdf_ppo.h"/>
+        <header-file src="src/ios/PDFium/fpdf_progressive.h"/>
+        <header-file src="src/ios/PDFium/fpdf_save.h"/>
+        <header-file src="src/ios/PDFium/fpdf_searchex.h"/>
+        <header-file src="src/ios/PDFium/fpdf_structtree.h"/>
+        <header-file src="src/ios/PDFium/fpdf_sysfontinfo.h"/>
+        <header-file src="src/ios/PDFium/fpdf_text.h"/>
+        <header-file src="src/ios/PDFium/fpdf_transformpage.h"/>
+        <header-file src="src/ios/PDFium/fpdfview.h"/>
+
+        <framework src="UIKit.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="CoreText.framework"/>
+        <framework src="src/ios/PDFium/libpdfium.a"/>
+        
+        <source-file src="src/ios/Graphics/UXReader-Display-Mode.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Display-Mode@2x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Display-Mode@3x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Search-Close.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Search-Close@2x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Search-Close@3x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Search-Forward.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Search-Forward@2x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Search-Forward@3x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Search-Reverse.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Search-Reverse@2x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Search-Reverse@3x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Close.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Close@2x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Close@3x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Options.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Options@2x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Options@3x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Outline.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Outline@2x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Outline@3x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Preview.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Preview@2x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Preview@3x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Search.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Search@2x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Search@3x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Share.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Share@2x.png"/>
+        <source-file src="src/ios/Graphics/UXReader-Toolbar-Share@3x.png"/>
+
+    </platform>
+
+</plugin>
