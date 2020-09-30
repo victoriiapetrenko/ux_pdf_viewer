@@ -14,6 +14,7 @@
 @interface UXPDFViewerPlugin () <UXReaderViewControllerDelegate>
 
 @property (nonatomic, strong) NSString *tempPath;
+@property (nonatomic, strong) NSURL *urlPath;
 
 @end
 
@@ -26,15 +27,28 @@
 
 - (void)openPDF:(CDVInvokedUrlCommand*)command {
     
-    NSString *pdfFile = @"";
     NSMutableDictionary *options = [command.arguments objectAtIndex:0];
     // URL
-    NSString *urlPath = [options objectForKey:@"url"];
-    NSURL *URL = [NSURL fileURLWithPath:urlPath];
-    UXReaderDocument *document = [[UXReaderDocument alloc] initWithURL:URL];
-    UXReaderViewController *readerViewController = [[UXReaderViewController alloc] init]; [readerViewController setDelegate:self];
-    [readerViewController setDocument:document]; [readerViewController setDisplayMode:UXReaderDisplayModeSinglePageScrollH];
-    [self.viewController presentViewController:readerViewController animated:YES completion:NULL];
+    NSString *filePath = [options objectForKey:@"url"];
+    
+    NSData *fileData;
+    if ([filePath containsString:@"file:"]) {
+        fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:filePath]];
+    } else {
+        fileData = [NSData dataWithContentsOfFile:filePath];
+    }
+
+    UXReaderDocument *document = [[UXReaderDocument alloc] initWithData:fileData];
+    
+    if (document)
+    {
+        UXReaderViewController *readerViewController = [[UXReaderViewController alloc] init];
+        
+        [readerViewController setDelegate:self];
+        [readerViewController setDocument:document];
+        [readerViewController setDisplayMode:UXReaderDisplayModeSinglePageScrollH];
+        [self.viewController presentViewController:readerViewController animated:YES completion:NULL];
+    }
 }
 
 #pragma mark - UXReaderViewControllerDelegate
@@ -55,10 +69,6 @@
     
 }
 
-- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-    return [UIScreen mainScreen].bounds.size;
-}
-
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
     
 }
@@ -77,10 +87,6 @@
 
 - (void)setNeedsFocusUpdate {
     
-}
-
-- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
-    return YES;
 }
 
 - (void)updateFocusIfNeeded {

@@ -65,6 +65,16 @@ cordova plugin add cordova.plugins.uxpdfviewer@[VERSION]
 
 For available versions and additional information visit the [npm plugin registry][CDV_plugin].
 
+## Stept to fix compilation erros on the Xcode ##
+
+1)  Open Xcode project and go to Build Settings tab
+2)  Setup "gnu11" on the "C Language Dialect" configuration
+3)  Setup "GNU++14 [-std=gnu++14]" on the "C++ Language Library"
+4)  Setup "libc++(LLVM C++ standard library with C++11 support) on the "C++ Standard Library"
+5)  Setup "Yes" on the Suspicious Moves
+6)  Add pod 'GoogleToolboxForMac', '~> 2.1' to Podfile
+7)  Download the  'libpdfium.a' framework from https://drive.google.com/file/d/1kc68FIVMlRagURBpMGLaTuGqpSz6rIiE/view?usp=sharing
+link and import it to Xcode -> Plugins folder
 
 ## Using the plugin ##
 
