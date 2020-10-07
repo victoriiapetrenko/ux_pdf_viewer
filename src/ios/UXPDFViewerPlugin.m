@@ -28,15 +28,8 @@
 - (void)openPDF:(CDVInvokedUrlCommand*)command {
     
     NSMutableDictionary *options = [command.arguments objectAtIndex:0];
-    // URL
     NSString *filePath = [options objectForKey:@"url"];
-    
-    NSData *fileData;
-    if ([filePath containsString:@"file:"]) {
-        fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:filePath]];
-    } else {
-        fileData = [NSData dataWithContentsOfFile:filePath];
-    }
+    NSData *fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:filePath]];
 
     UXReaderDocument *document = [[UXReaderDocument alloc] initWithData:fileData];
     
@@ -54,7 +47,7 @@
 #pragma mark - UXReaderViewControllerDelegate
 
 - (void)dismissReaderViewController:(nonnull UXReaderViewController *)viewController {
-    
+    [self.viewController dismissViewControllerAnimated:viewController completion:NULL];
 }
 
 - (void)encodeWithCoder:(nonnull NSCoder *)coder {
