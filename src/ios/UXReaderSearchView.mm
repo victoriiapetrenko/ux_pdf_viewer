@@ -79,7 +79,7 @@
 	[searchField setTranslatesAutoresizingMaskIntoConstraints:NO]; [searchField setSearchBarStyle:UISearchBarStyleMinimal];
 	[searchField setDelegate:self]; [searchField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
 	[searchField setReturnKeyType:UIReturnKeySearch]; [searchField setEnablesReturnKeyAutomatically:YES];
-	[searchField setPlaceholder:[bundle localizedStringForKey:@"SearchDocument" value:nil table:nil]];
+	[searchField setPlaceholder:[bundle localizedStringForKey:@"Dokument durchsuchen" value:nil table:nil]];
 	[view addSubview:searchField]; //[searchField setBackgroundColor:[UIColor lightGrayColor]];
 
 	[view addConstraint:[NSLayoutConstraint constraintWithItem:searchField attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual
@@ -193,7 +193,7 @@
 {
 	//NSLog(@"%s %i %i", __FUNCTION__, int(x), int(n));
 
-	NSString *format = [bundle localizedStringForKey:@"%i of %i" value:nil table:nil];
+	NSString *format = [bundle localizedStringForKey:@"%i von %i" value:nil table:nil];
 
 	[searchLabel setText:[NSString stringWithFormat:format, int(x), int(n)]];
 }
@@ -202,7 +202,7 @@
 {
 	//NSLog(@"%s %i %i %i", __FUNCTION__, int(x), int(n), int(o));
 
-	NSString *format = [bundle localizedStringForKey:@"%i of %i on %i" value:nil table:nil];
+	NSString *format = [bundle localizedStringForKey:@"%i von %i auf %i" value:nil table:nil];
 
 	[searchLabel setText:[NSString stringWithFormat:format, int(x), int(n), int(o)]];
 }
@@ -211,7 +211,7 @@
 {
 	//NSLog(@"%s %i", __FUNCTION__, int(count));
 
-	NSString *format = [bundle localizedStringForKey:@"SearchIntCount" value:nil table:nil];
+	NSString *format = [bundle localizedStringForKey:@"Suche int anzahl" value:nil table:nil];
 
 	[searchLabel setText:[NSString stringWithFormat:format, int(count)]];
 }
@@ -220,7 +220,7 @@
 {
 	//NSLog(@"%s", __FUNCTION__);
 
-	NSString *text = [bundle localizedStringForKey:@"SearchNotFound" value:nil table:nil];
+	NSString *text = [bundle localizedStringForKey:@"Suche nicht gefunden" value:nil table:nil];
 
 	[searchLabel setText:text];
 }
@@ -230,6 +230,7 @@
 	//NSLog(@"%s", __FUNCTION__);
 
 	[searchField resignFirstResponder];
+    [self endEditing:YES];
 }
 
 #pragma mark - UISearchBarDelegate methods
